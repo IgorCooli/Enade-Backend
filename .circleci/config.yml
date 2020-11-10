@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  maven-build: inclasstoday/maven-build@X.Y.Z
+workflows:
+  version: 2.1
+  verify_and_build:
+    jobs:
+      - maven-build/docker_build:
+          context: maven-build
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
