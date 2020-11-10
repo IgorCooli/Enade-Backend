@@ -1,14 +1,14 @@
 version: 2.1
 orbs:
-  # maven-build: circleci/maven@0.0.12
+  maven-build: circleci/maven@0.0.12
   heroku: circleci/heroku@0.0.10
 workflows:
   version: 2.1
-  # maven_test:
-  #   jobs:
-  #     command: mvn test
+  maven_test:
+    jobs:
+      # command: mvn test
       # - mvn -o surefire:test
-      # - maven-build/test # checkout, build, test, and upload test results
+      - maven-build/test # checkout, build, test, and upload test results
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
