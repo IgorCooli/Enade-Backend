@@ -6,7 +6,8 @@ workflows:
   version: 2.1
   maven_test:
     jobs:
-      - maven-build/build # checkout, build, test, and upload test results
+      - mvn -o surefire:test
+      # - maven-build/test # checkout, build, test, and upload test results
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
