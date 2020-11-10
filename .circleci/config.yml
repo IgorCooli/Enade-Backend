@@ -4,9 +4,9 @@ orbs:
   heroku: circleci/heroku@0.0.10
 workflows:
   version: 2.1
-  maven_test:
-    jobs:
-      command: mvn test
+  # maven_test:
+  #   jobs:
+  #     command: mvn test
       # - mvn -o surefire:test
       # - maven-build/test # checkout, build, test, and upload test results
   heroku_deploy:
