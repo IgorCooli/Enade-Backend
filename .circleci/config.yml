@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
-  maven-build: inclasstoday/maven-build@X.Y.Z
+  maven-build: circleci/maven@0.0.12
+  heroku: circleci/heroku@0.0.10
 workflows:
   version: 2.1
   verify_and_build:
@@ -10,3 +11,5 @@ workflows:
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
+
+
