@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import be.com.cesjf.enade.dto.UsuarioDTO;
@@ -21,7 +22,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 			+ "from Usuario u "
 			+ "where u.id = :id"
 		)
-    public UsuarioDTO findUsuarioById(Long id);
+    public UsuarioDTO findUsuarioById(@Param("id") Long id);
 	
 	
 	
@@ -37,6 +38,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 			+ "where u.email = :email "
 			+ "and u.senha = :senha"
 		)
-    public UsuarioDTO login(String email, String senha);
+    public UsuarioDTO login(@Param("email") String email, @Param("senha") String senha);
 
 }
