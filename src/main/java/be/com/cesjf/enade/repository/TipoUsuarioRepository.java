@@ -11,4 +11,7 @@ import be.com.cesjf.enade.model.TipoUsuario;
 @Transactional
 public interface TipoUsuarioRepository extends JpaRepository<TipoUsuario, Long>{
 
+	
+	TipoUsuario findByNome(String tipo);
+
 }
