@@ -59,7 +59,7 @@ public class UsuarioResource {
 		dto = repo.login(loginDTO.getEmail(), loginDTO.getSenha());
 		
 		if(dto!=null) {
-			return ResponseEntity.status(HttpStatus.OK).body("Logado com sucesso!!!");
+			return ResponseEntity.status(HttpStatus.OK).body("Logado com sucesso!");
 		}else {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não encontrado!!!");
 		}
