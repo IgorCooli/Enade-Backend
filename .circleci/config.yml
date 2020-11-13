@@ -21,5 +21,6 @@ workflows:
             - build
 jobs:
   build:
-    - maven-build/test
+    steps:
+      - maven-build/test
 
