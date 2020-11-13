@@ -19,8 +19,35 @@ workflows:
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
-  jobs:
-    build:
-      steps:
-        - maven-build/test
+jobs:
+  build:
+    steps:
+      - run: maven-build/test
 
+
+# version: 2.1
+
+# orbs:
+#   heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
+
+# workflows:
+#   heroku_deploy:
+#     jobs:
+#       - build
+#       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: sequential-branch-filter
+# jobs:
+#   build:
+#     steps:
+#       - checkout
+#       # Bundle install dependencies
+#       - run: bundle install --path vendor/bundle
+#       # Database setup
+#       - run: bundle exec rake db:create db:schema:load
+#       - run:
+#           name: Run tests
+#           command: rake
