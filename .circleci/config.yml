@@ -19,10 +19,10 @@ workflows:
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
-jobs:
-  build:
-    steps:
-      - run: maven-build/test
+
+build:
+  steps:
+    - run: maven-build/test
 
 
 # version: 2.1
