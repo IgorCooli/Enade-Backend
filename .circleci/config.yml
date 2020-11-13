@@ -15,14 +15,14 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-      - build
+      - maven-build/test
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
-
-build:
-  steps:
-    - run: maven-build/test
+# jobs:
+#   build:
+#     steps:
+#       - run: maven-build/test
 
 
 # version: 2.1
