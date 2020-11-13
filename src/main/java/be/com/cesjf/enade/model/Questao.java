@@ -59,4 +59,6 @@ public class Questao {
 	@ManyToMany(mappedBy = "questoes")
 	private List<Prova> provas;
 	
+	private int estado;
+	
 }
