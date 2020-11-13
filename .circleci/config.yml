@@ -9,6 +9,7 @@ workflows:
   #     - maven-build/test #  checkout, build, test, and upload test results
   heroku_deploy:
     jobs:
+      - maven-build/test
       - heroku/deploy-via-git
 
 
