@@ -10,5 +10,6 @@ import be.com.cesjf.enade.model.TipoQuestao;
 @Repository
 @Transactional
 public interface TipoQuestaoRepository extends JpaRepository<TipoQuestao, Long>{
-
+	
+	TipoQuestao findByNome(String tipo);
 }
