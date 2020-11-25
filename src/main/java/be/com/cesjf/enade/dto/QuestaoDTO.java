@@ -30,7 +30,7 @@ public class QuestaoDTO {
 	
 	private String questaoCorreta;
 	
-	private String tipoQuestao;
+	private Long tipoQuestao;
 	
 	private int estado;
 
