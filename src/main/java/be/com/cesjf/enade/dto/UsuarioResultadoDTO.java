@@ -11,12 +11,19 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResultadoDTO {
+public class UsuarioResultadoDTO {
+	
 
+	private Long id;
+	
+	private String nome;
+	
+	private String email;
+	
+	private String senha;
+	
+	private String tipo;
+	
 	private double valorObtido;
-	
-	private Long usuarioId;
-	
-	private Long provaId;
 
 }
