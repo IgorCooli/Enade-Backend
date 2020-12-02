@@ -37,4 +37,6 @@ jobs:
           password: $DOCKERHUB_PASSWORD 
     steps:
       - heroku/deploy-via-git
+      requires:
+            - build
   
