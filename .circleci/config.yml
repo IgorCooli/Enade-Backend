@@ -12,43 +12,26 @@
 #       - heroku/deploy-via-git
 
 
-# version: 2.1
-# orbs:
-#   heroku: circleci/heroku@0.0.10
-# jobs:
-#   mvn_build:
-#     docker:
-#       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
-#         auth:
-#           username: igorcooli
-#           password: Senhadodocker159
-#     steps:
-#       - checkout
-#       - run : mvn test
-#       - store_artifacts:
-#           path:  target
-# workflows:
-#   version: 2
-#   build_and_deploy:
-#     jobs:
-#       - mvn_build
-#       - heroku/deploy-via-git
-
 version: 2.1
+orbs:
+  heroku: circleci/heroku@0.0.10
 jobs:
   mvn_build:
+    docker:
+      - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
+        auth:
+          username: igorcooli
+          password: Senhadodocker159
     steps:
       - checkout
       - run : mvn test
       - store_artifacts:
           path:  target
-orbs:
-  heroku: circleci/heroku@0.0.10
 workflows:
   version: 2
   build_and_deploy:
     jobs:
       - mvn_build
-      - heroku/deploy-via-git:
-        requires:
-          - mvn_build
+      - heroku/deploy-via-git
+
+
