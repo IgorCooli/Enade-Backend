@@ -33,7 +33,7 @@ workflows:
     jobs:
       - mvn_build
       - heroku/deploy-via-git:
-        requires:
-          - mvn_build
+          requires:
+            - mvn_build
 
 
