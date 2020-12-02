@@ -35,4 +35,6 @@ jobs:
           password: Senhadodocker159
     steps:
       - heroku/deploy-via-git
+    require:
+      - build
       
