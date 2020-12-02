@@ -35,8 +35,6 @@
 #       - heroku/deploy-via-git
 
 version: 2.1
-orbs:
-  heroku: circleci/heroku@0.0.10
 jobs:
   mvn_build:
     steps:
@@ -52,6 +50,8 @@ jobs:
           password: Senhadodocker159
     steps:
       - heroku/deploy-via-git
+orbs:
+  heroku: circleci/heroku@0.0.10
 workflows:
   version: 2
   build_and_deploy:
