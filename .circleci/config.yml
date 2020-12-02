@@ -12,6 +12,9 @@
 #       - heroku/deploy-via-git
 
 
+version: 2.1
+orbs:
+  heroku: circleci/heroku@0.0.10
 jobs:
   mvn_build:
     docker:
@@ -24,20 +27,8 @@ jobs:
       - run : mvn test
       - store_artifacts:
           path:  target
-  heroku_deploy:
-    executor: heroku/default
-    steps:
       - heroku/deploy-via-git
-version: 2.1
-workflows:
-  build:
-    jobs:
-      - mvn_build
-  deploy:
-    orbs:
-      heroku: circleci/heroku@0.0.10
-    jobs:
-      - heroku_deploy
+
 
 # orbs:
 #   heroku: circleci/heroku@x.y
