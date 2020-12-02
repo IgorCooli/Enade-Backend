@@ -28,7 +28,11 @@ jobs:
       - store_artifacts:
           path:  target
       - heroku/deploy-via-git
-
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - mvn_build
 
 # orbs:
 #   heroku: circleci/heroku@x.y
