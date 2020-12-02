@@ -27,14 +27,3 @@ jobs:
       - run : mvn test
       - store_artifacts:
           path:  target
-  deploy:
-    docker:
-      - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
-        auth:
-          username: igorcooli
-          password: Senhadodocker159
-    steps:
-      - heroku/deploy-via-git
-    require:
-      build
-      
