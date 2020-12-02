@@ -14,9 +14,9 @@
 
 version: 2.1
 orbs:
-  heroku: circleci/heroku@0.0.10
+  heroku: circleci/heroku@1.2.3
 jobs:
-  build:
+  mvn_build:
     docker:
       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
         auth:
@@ -31,7 +31,13 @@ jobs:
     executor: heroku/default
     steps:
       - heroku/deploy-via-git
-
+workflows:
+  build:
+    jobs:
+      - mvn_build
+  heroku_deploy:
+    jobs:
+      - deploy
 
 # orbs:
 #   heroku: circleci/heroku@x.y
