@@ -37,7 +37,6 @@ jobs:
     steps:
       - heroku/deploy-via-git
 workflows:
-  version: 2.1
   build-and-deploy:
     jobs:
       - mvn_build
