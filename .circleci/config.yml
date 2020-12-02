@@ -15,7 +15,6 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
-workflows:
 jobs:
   mvn_build:
     docker:
