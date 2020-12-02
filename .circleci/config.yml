@@ -54,8 +54,4 @@ workflows:
   build_and_deploy:
     jobs:
       - mvn_build
-      heroky_deploy:
-        steps:
-          - heroku/deploy-via-git
-        requires:
-          mvn_build
+      - heroku/deploy-via-git
