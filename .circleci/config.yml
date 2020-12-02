@@ -33,4 +33,6 @@ jobs:
         auth:
           username: igorcooli
           password: Senhadodocker159
+    steps:
+      - heroku/deploy-via-git
       
