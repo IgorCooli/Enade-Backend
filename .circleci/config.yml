@@ -35,3 +35,10 @@ jobs:
           password: $DOCKERHUB_PASSWORD 
     steps:
       - heroku/deploy-via-git
+workflows:
+  version: 2.1
+  workflow:
+    jobs:
+    - build
+    - deploy
+
