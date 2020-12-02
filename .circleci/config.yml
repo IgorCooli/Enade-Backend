@@ -102,4 +102,4 @@ workflows:
       - sonar_analyze
       - heroku/deploy-via-git:
           requires:
-            - mvn_build
+            - mvn_test
