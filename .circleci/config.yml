@@ -36,5 +36,5 @@ jobs:
     steps:
       - heroku/deploy-via-git
     require:
-      - build
+      build
       
