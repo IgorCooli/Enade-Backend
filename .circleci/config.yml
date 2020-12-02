@@ -31,7 +31,9 @@ workflows:
   build_and_analyze_and_deploy:
     jobs:
       - mvn_test
-      - sonar_analyze
+      - sonar_analyze:
+          requires:
+            - mvn_test
       - heroku/deploy-via-git:
           requires:
             - mvn_test
