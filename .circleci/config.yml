@@ -15,6 +15,7 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
+workflows:
 jobs:
   build:
     docker:
@@ -35,11 +36,6 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - heroku/deploy-via-git
-workflows:
-  version: 2.1
-  build-and-deploy:
-    jobs:
+    require:
       - build
-      - heroku_deploy:
-        requires:
-          - build
+
