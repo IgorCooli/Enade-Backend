@@ -12,9 +12,6 @@
 #       - heroku/deploy-via-git
 
 
-version: 2.1
-orbs:
-  heroku: circleci/heroku@1.2.3
 jobs:
   mvn_build:
     docker:
@@ -31,6 +28,10 @@ jobs:
     executor: heroku/default
     steps:
       - heroku/deploy-via-git
+
+version: 2.1
+orbs:
+  heroku: circleci/heroku@0.0.10
 workflows:
   build:
     jobs:
