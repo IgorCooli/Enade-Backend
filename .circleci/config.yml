@@ -30,7 +30,7 @@
 
 
 orbs:
-  maven-build: circleci/maven@0.0.12
+  heroku: circleci/heroku@0.0.10
 jobs:
   build:
     docker:
