@@ -70,7 +70,7 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
 jobs:
-  mvn_build:
+  mvn_test:
     docker:
       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
         auth:
@@ -98,7 +98,7 @@ workflows:
   version: 2
   build_and_analyze_and_deploy:
     jobs:
-      - mvn_build
+      - mvn_test
       - sonar_analyze
       - heroku/deploy-via-git:
           requires:
