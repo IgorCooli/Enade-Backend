@@ -33,8 +33,6 @@ workflows:
     jobs:
       - mvn_build
       - heroku/deploy-via-git
-        requires:
-          mvn_build
 
 # orbs:
 #   heroku: circleci/heroku@x.y
