@@ -67,7 +67,7 @@ public class ProvaResource {
 			questaoModel.setAlternativaE(questao.getAlternativaE());
 			questaoModel.setDescricao(questao.getDescricao());
 			questaoModel.setEstado(questao.getEstado()); 
-			questaoModel.setTipoQuestao(tpQuestaorepo.findById(questao.getTipoQuestao()).orElse(null));
+			questaoModel.setTipoQuestao(tpQuestaorepo.findById(questao.getTipoQuestao()).get());
 			questaoModel.setQuestaoCorreta(questao.getQuestaoCorreta());
 			
 			lista.add(questaoModel);
