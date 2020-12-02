@@ -15,9 +15,8 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
-workflows:
 jobs:
-  mvn_build:
+  build:
     docker:
       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
         auth:
@@ -28,11 +27,10 @@ jobs:
       - run : mvn test
       - store_artifacts:
           path:  target
-  heroku_deploy:
+  deploy:
     docker:
       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
         auth:
           username: igorcooli
           password: Senhadodocker159
-    steps:
-      - heroku/deploy-via-git
+      
