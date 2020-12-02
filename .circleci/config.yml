@@ -27,7 +27,7 @@ jobs:
       - run : mvn test
       - store_artifacts:
           path:  target
-  deploy:
+  heroku_deploy:
     docker:
       - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
         auth:
@@ -37,9 +37,8 @@ jobs:
       - heroku/deploy-via-git
 workflows:
   version: 2.1
-  workflow:
+  build_and_deploy:
     jobs:
-      steps:
-        - build
-        - deploy
+      - build
+      - heroku_deploy
 
