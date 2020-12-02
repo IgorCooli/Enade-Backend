@@ -62,7 +62,7 @@ public class QuestaoResource {
 	public ResponseEntity<?> atualizaEstado(@PathVariable Long id){
 		
 		Questao model = new Questao();
-		model = repo.findById(id).orElseThrow();
+		model = repo.findById(id).orElse(new Questao());
 		
 		if(model.getEstado() == 1) {
 			model.setEstado(0);

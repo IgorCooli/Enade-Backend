@@ -84,7 +84,7 @@ public class ProvaResource {
 	@GetMapping("/findquestoes/{id}")
 	public ResponseEntity<?> findQuestoes(@PathVariable Long id){
 		Prova prova = new Prova();
-		prova = repo.findById(id).orElseThrow();
+		prova = repo.findById(id).orElse(new Prova());
 		List<QuestaoDTO> lista = new ArrayList<QuestaoDTO>();
 		for (Questao questao : prova.getQuestoes()) {
 			QuestaoDTO dto = new QuestaoDTO();
