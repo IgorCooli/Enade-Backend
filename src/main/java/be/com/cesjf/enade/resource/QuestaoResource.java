@@ -72,7 +72,7 @@ public class QuestaoResource {
 		
 		repo.save(model);
 		
-		return ResponseEntity.status(HttpStatus.OK).body("Questão alterada com sucesso");
+		return ResponseEntity.status(HttpStatus.OK).body("Questão alterada com sucesso!!!");
 		
 	}
 	
