@@ -29,6 +29,8 @@
 #           path:  target
 
 
+orbs:
+  maven-build: circleci/maven@0.0.12
 jobs:
   build:
     docker:
