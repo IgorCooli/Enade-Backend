@@ -38,8 +38,8 @@ public class ResultadoResource {
 	@PostMapping("/save")
 	public ResponseEntity<?> save(@RequestBody ResultadoDTO dto){
 		
-		Prova prova = provaRepo.findById(dto.getProvaId()).get();
-		Usuario usuario = usuarioRepo.findById(dto.getUsuarioId()).get();
+		Prova prova = provaRepo.findById(dto.getProvaId()).orElse(null);
+		Usuario usuario = usuarioRepo.findById(dto.getUsuarioId()).orElse(null);
 		
 		Resultado model = new Resultado();
 		

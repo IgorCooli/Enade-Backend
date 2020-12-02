@@ -82,7 +82,7 @@ public class UsuarioResource {
 			boolean fez = false;
 			
 			for (Resultado resultado : usuario.getResultados()) {
-				if(resultado.getProva().getId()==provaId) {
+				if(resultado.getProva().getId().equals(provaId)) {
 					fez = true;
 				}
 			}

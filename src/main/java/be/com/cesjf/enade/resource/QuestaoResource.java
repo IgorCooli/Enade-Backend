@@ -38,7 +38,7 @@ public class QuestaoResource {
 		model.setAlternativaE(dto.getAlternativaE());
 		model.setDescricao(dto.getDescricao());
 		model.setEstado(1);
-		model.setTipoQuestao(tpQuestaorepo.findById(dto.getTipoQuestao()).get());
+		model.setTipoQuestao(tpQuestaorepo.findById(dto.getTipoQuestao()).orElse(null));
 		model.setQuestaoCorreta(dto.getQuestaoCorreta());
 		
 		repo.save(model);
@@ -62,7 +62,7 @@ public class QuestaoResource {
 	public ResponseEntity<?> atualizaEstado(@PathVariable Long id){
 		
 		Questao model = new Questao();
-		model = repo.findById(id).get();
+		model = repo.findById(id).orElse(null);
 		
 		if(model.getEstado() == 1) {
 			model.setEstado(0);
