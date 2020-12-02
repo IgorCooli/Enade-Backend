@@ -58,4 +58,4 @@ workflows:
         steps:
           - heroku/deploy-via-git
         requires:
-          - mvn_build
+          mvn_build
