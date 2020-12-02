@@ -27,7 +27,7 @@ jobs:
       - run : mvn test
       - store_artifacts:
           path:  target
-  deploy:
+  heroku_deploy:
     executor: heroku/default
     steps:
       - heroku/deploy-via-git
@@ -35,9 +35,9 @@ workflows:
   build:
     jobs:
       - mvn_build
-  heroku_deploy:
+  deploy:
     jobs:
-      - deploy
+      - heroku_deploy
 
 # orbs:
 #   heroku: circleci/heroku@x.y
