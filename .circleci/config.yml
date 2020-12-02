@@ -40,6 +40,4 @@ workflows:
   build-and-deploy:
     jobs:
       - mvn_build
-      - heroku_deploy:
-        requires:
-          - build
+      - heroku_deploy
